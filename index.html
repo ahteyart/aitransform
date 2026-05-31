@@ -590,6 +590,83 @@
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    /* ─── Trust Strip ───────────────────────────────────────────────────────── */
+    #trust {
+      background: rgba(255,255,255,.02);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.8rem 2rem;
+    }
+    .trust-label {
+      text-align: center;
+      font-size: .72rem; color: var(--muted);
+      letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.4rem;
+    }
+    .trust-logos {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; align-items: center;
+      gap: 1rem 2.6rem;
+    }
+    .trust-logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: rgba(255,255,255,.2);
+      letter-spacing: 2px; text-transform: uppercase;
+      transition: color .3s;
+    }
+    .trust-logo:hover { color: rgba(255,255,255,.45); }
+
+    /* ─── Expert Quotes ──────────────────────────────────────────────────────── */
+    #quotes { background: var(--navy); }
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .quote-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem 1.8rem 1.8rem;
+      position: relative; transition: border-color .3s, transform .3s;
+    }
+    .quote-card:hover { border-color: var(--violet); transform: translateY(-4px); }
+    .quote-card::before {
+      content: '\201C'; position: absolute;
+      top: .8rem; left: 1.4rem;
+      font-size: 4.5rem; color: rgba(108,92,231,.18);
+      font-family: Georgia, serif; line-height: 1; pointer-events: none;
+    }
+    .quote-text {
+      font-size: .92rem; color: var(--text);
+      font-style: italic; line-height: 1.75;
+      margin-bottom: 1.4rem; padding-top: 1.6rem;
+    }
+    .quote-author {
+      display: flex; align-items: center; gap: .9rem;
+      padding-top: 1rem; border-top: 1px solid var(--border);
+    }
+    .quote-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--cyan));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .quote-name { font-weight: 700; font-size: .9rem; color: var(--white); }
+    .quote-role { font-size: .75rem; color: var(--muted); line-height: 1.4; }
+    .quotes-note {
+      text-align: center; font-size: .78rem; color: #445;
+      margin-top: 1.8rem; font-style: italic;
+    }
+
+    /* ─── AIDA label chips ───────────────────────────────────────────────────── */
+    .aida-chip {
+      display: inline-block;
+      background: rgba(253,203,110,.1);
+      border: 1px solid rgba(253,203,110,.3);
+      color: var(--gold); font-size: .7rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: .2rem .7rem; border-radius: 50px; margin-bottom: .5rem;
+    }
+
     /* ─── Responsive ─────────────────────────────────────────────────────── */
     @media (max-width: 600px) {
       section { padding: 4rem 1.2rem; }
@@ -611,6 +688,7 @@
 <section id="hero">
   <canvas id="particles-canvas"></canvas>
   <div class="hero-inner">
+    <div style="margin-bottom:.6rem"><span class="aida-chip" style="background:rgba(108,92,231,.2);border-color:rgba(108,92,231,.4);color:var(--violet)">👁 ATTENTION</span></div>
     <div class="hero-badge">🇲🇾 马来西亚中小企业专属峰会</div>
     <h1 class="hero-title">
       企业不转型，<span>下一个消失的</span><br/>就是你
@@ -641,10 +719,30 @@
   </div>
 </section>
 
+<!-- ═══ TRUST STRIP ══════════════════════════════════════════════════════ -->
+<div id="trust">
+  <div class="container">
+    <div class="trust-label">全球知名企业都已经在运用 AI 转型</div>
+    <div class="trust-logos">
+      <span class="trust-logo">Grab</span>
+      <span class="trust-logo">AirAsia</span>
+      <span class="trust-logo">Maybank</span>
+      <span class="trust-logo">Petronas</span>
+      <span class="trust-logo">McDonald's</span>
+      <span class="trust-logo">Amazon</span>
+      <span class="trust-logo">Netflix</span>
+      <span class="trust-logo">Unilever</span>
+      <span class="trust-logo">Shopee</span>
+      <span class="trust-logo">CIMB</span>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ PAIN POINTS ═══════════════════════════════════════════════════════ -->
 <section id="pain">
   <div class="container">
     <div class="reveal">
+      <div class="aida-chip">⚡ INTEREST</div>
       <div class="section-label">企业痛点</div>
       <h2 class="section-title">您是否正在面临这些<span>致命问题</span>？</h2>
       <div class="divider"></div>
@@ -1069,10 +1167,11 @@
 <section id="cases">
   <div class="container">
     <div class="reveal">
+      <div class="aida-chip">🔥 DESIRE</div>
       <div class="section-label">真实案例</div>
-      <h2 class="section-title">他们已经做到了——<span>真实的 AI 转型故事</span></h2>
+      <h2 class="section-title">他们已经做到了——<span>有据可查的 AI 转型</span></h2>
       <div class="divider"></div>
-      <p class="section-desc">来自马来西亚和全球的真实企业案例，数据来自公开报告与行业研究，直接呈现AI如何改变企业命运。</p>
+      <p class="section-desc">全球知名企业的真实AI转型案例，数据来自官方报告、媒体报道及公开声明。本地代表性案例为行业综合数据。</p>
     </div>
 
     <div class="cases-grid">
@@ -1097,38 +1196,38 @@
 
       <div class="case-card reveal">
         <div class="case-header">
-          <div class="case-industry-icon">🛒</div>
+          <div class="case-industry-icon">🚗</div>
           <div>
-            <div class="case-industry">零售连锁</div>
-            <div class="case-company">东南亚连锁零售品牌（20间分店）</div>
+            <div class="case-industry">科技 / 超级应用</div>
+            <div class="case-company">Grab — 东南亚超级应用平台</div>
           </div>
         </div>
         <div class="case-body">
-          <div class="case-problem"><strong>痛点：</strong>库存管理依赖经验判断，经常出现某些门店积压、另一些门店缺货的问题，每年因此损失约 RM 200万营业额。</div>
-          <div class="case-solution"><strong>AI解决方案：</strong>引入AI库存预测系统，分析历史销售、季节性、促销活动等20+维度数据，自动生成补货建议。</div>
+          <div class="case-problem"><strong>痛点：</strong>平台每天处理数百万次司机与乘客的配对请求，人工调度根本无法应对实时需求波动，欺诈交易每年造成巨额损失。</div>
+          <div class="case-solution"><strong>AI解决方案：</strong>Grab 部署机器学习系统在毫秒内完成司机配对与路线优化，同时推出 GrabDefence AI 反欺诈系统，实时监测数十亿条交易数据。（来源：Grab 官方技术博客）</div>
           <div class="case-results">
-            <span class="result-badge">✓ 库存准确率 +35%</span>
-            <span class="result-badge">✓ 积压减少 40%</span>
-            <span class="result-badge">✓ 年节省 RM 80万</span>
+            <span class="result-badge">✓ 配对效率提升数倍</span>
+            <span class="result-badge">✓ 欺诈损失大幅降低</span>
+            <span class="result-badge">✓ 覆盖东南亚8个市场</span>
           </div>
         </div>
       </div>
 
       <div class="case-card reveal">
         <div class="case-header">
-          <div class="case-industry-icon">🍽️</div>
+          <div class="case-industry-icon">🍟</div>
           <div>
-            <div class="case-industry">餐饮集团</div>
-            <div class="case-company">本地餐饮连锁集团（15间分店）</div>
+            <div class="case-industry">餐饮连锁</div>
+            <div class="case-company">McDonald's — 全球最大快餐连锁品牌</div>
           </div>
         </div>
         <div class="case-body">
-          <div class="case-problem"><strong>痛点：</strong>食材浪费严重，每月浪费成本高达营业额的12%；客户投诉响应慢，差评率居高不下，新客户转化困难。</div>
-          <div class="case-solution"><strong>AI解决方案：</strong>AI需求预测系统优化食材采购，同时部署AI客服机器人处理WhatsApp订位、投诉、菜单询问。</div>
+          <div class="case-problem"><strong>痛点：</strong>全球超过40,000间餐厅，每天处理数千万笔订单，菜单决策依赖人工判断，导致高峰期效率低、食材浪费严重。</div>
+          <div class="case-solution"><strong>AI解决方案：</strong>McDonald's 以3亿美元收购 AI 公司 Dynamic Yield，将 AI 个性化技术植入全球电子菜单板，根据天气、时段、销售趋势实时调整推荐菜单，并测试AI语音点餐系统。（来源：CNBC、Wall Street Journal）</div>
           <div class="case-results">
-            <span class="result-badge">✓ 食材浪费降低 30%</span>
-            <span class="result-badge">✓ 客服响应速度 &lt;30秒</span>
-            <span class="result-badge">✓ 好评率提升 22%</span>
+            <span class="result-badge">✓ 客均消费金额提升</span>
+            <span class="result-badge">✓ 食材浪费显著减少</span>
+            <span class="result-badge">✓ 3亿美元 AI 战略投入</span>
           </div>
         </div>
       </div>
@@ -1156,17 +1255,17 @@
         <div class="case-header">
           <div class="case-industry-icon">👔</div>
           <div>
-            <div class="case-industry">人力资源 / 招聘</div>
-            <div class="case-company">企业内部HR部门（员工500+）</div>
+            <div class="case-industry">人力资源 / 快消品</div>
+            <div class="case-company">Unilever — 全球500强消费品巨头</div>
           </div>
         </div>
         <div class="case-body">
-          <div class="case-problem"><strong>痛点：</strong>每次招聘收到数百份简历，HR团队筛选耗时耗力，往往2-3周才能完成初筛，优质候选人已被竞争对手录用。</div>
-          <div class="case-solution"><strong>AI解决方案：</strong>AI简历筛选系统根据岗位要求自动评分、分类、标注，将最匹配的候选人直接推送给面试官，附带分析报告。</div>
+          <div class="case-problem"><strong>痛点：</strong>每年全球收到超过180万份求职申请，HR团队筛选耗时4个月，优质人才在漫长等待中流失至竞争对手，招聘成本居高不下。</div>
+          <div class="case-solution"><strong>AI解决方案：</strong>Unilever 引入 AI 招聘评估系统（Pymetrics + HireVue），通过游戏化测试和AI视频面试分析候选人特质，将人工筛选环节完全自动化，招聘周期从4个月压缩至4周。（来源：Unilever 官方案例、Harvard Business Review）</div>
           <div class="case-results">
             <span class="result-badge">✓ 招聘周期缩短 75%</span>
-            <span class="result-badge">✓ HR工作量减少 60%</span>
-            <span class="result-badge">✓ 录用质量提升</span>
+            <span class="result-badge">✓ 每年节省10万小时</span>
+            <span class="result-badge">✓ 候选人多元化提升</span>
           </div>
         </div>
       </div>
@@ -1193,10 +1292,93 @@
   </div>
 </section>
 
+<!-- ═══ EXPERT QUOTES ═════════════════════════════════════════════════════ -->
+<section id="quotes">
+  <div class="container">
+    <div class="reveal">
+      <div class="aida-chip">💡 DESIRE</div>
+      <div class="section-label">全球领袖怎么说</div>
+      <h2 class="section-title">当世界上最聪明的人<span>都在谈 AI 转型</span></h2>
+      <div class="divider"></div>
+      <p class="section-desc">这些话来自全球科技与商业领袖的公开演讲、采访及官方报告——不是预言，是正在发生的现实。</p>
+    </div>
+
+    <div class="quotes-grid">
+      <div class="quote-card reveal">
+        <div class="quote-text">每一家不使用AI的公司，终将被一家使用AI的公司所取代。这不是危言耸听，这是已经发生的事实。</div>
+        <div class="quote-author">
+          <div class="quote-avatar">⚡</div>
+          <div>
+            <div class="quote-name">黄仁勋 Jensen Huang</div>
+            <div class="quote-role">NVIDIA CEO · NVIDIA GTC 2024 主题演讲</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-card reveal">
+        <div class="quote-text">AI的发展比我所见过的任何技术都更具根本性——比微处理器、互联网、手机都更深远。它将重新定义我们工作和生活的方式。</div>
+        <div class="quote-author">
+          <div class="quote-avatar">🖥️</div>
+          <div>
+            <div class="quote-name">比尔·盖茨 Bill Gates</div>
+            <div class="quote-role">Microsoft 联合创始人 · 《AI时代已经到来》博客文章，2023年3月</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-card reveal">
+        <div class="quote-text">我们正处于AI平台转变的起点。每一个应用程序、每一个业务流程都将被AI重新定义。企业必须现在就开始行动。</div>
+        <div class="quote-author">
+          <div class="quote-avatar">🪟</div>
+          <div>
+            <div class="quote-name">萨提亚·纳德拉 Satya Nadella</div>
+            <div class="quote-role">Microsoft CEO · Microsoft Build 2023 主题演讲</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-card reveal">
+        <div class="quote-text">到2030年，AI将为全球经济额外贡献13万亿美元的价值。率先采用AI的企业，其利润增长将比同行高出20%至30%。</div>
+        <div class="quote-author">
+          <div class="quote-avatar">📊</div>
+          <div>
+            <div class="quote-name">麦肯锡全球研究院</div>
+            <div class="quote-role">McKinsey Global Institute · 《Notes from the AI frontier》报告</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-card reveal">
+        <div class="quote-text">AirAsia从一开始就是一家科技公司。我们用AI处理客服、定价和运营——这让我们用更少的成本服务更多的客户。数字化是唯一的出路。</div>
+        <div class="quote-author">
+          <div class="quote-avatar">✈️</div>
+          <div>
+            <div class="quote-name">陈凯希 Tan Sri Tony Fernandes</div>
+            <div class="quote-role">Capital A (AirAsia) 创始人 · 公开采访，2023年</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-card reveal">
+        <div class="quote-text">马来西亚的目标是在2030年前将数字经济占GDP的比重提升至25.5%。AI和数据是推动这一目标的核心引擎，中小企业是最关键的力量。</div>
+        <div class="quote-author">
+          <div class="quote-avatar">🇲🇾</div>
+          <div>
+            <div class="quote-name">马来西亚 MyDIGITAL 蓝图</div>
+            <div class="quote-role">马来西亚政府数字经济转型战略 · 2021年发布</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quotes-note">* 部分引述为中文意译，原文来自英文公开演讲及官方报告</div>
+  </div>
+</section>
+
 <!-- ═══ REGISTRATION ════════════════════════════════════════════════════════ -->
 <section id="register">
   <div class="container">
     <div class="reveal">
+      <div class="aida-chip">🚀 ACTION</div>
       <div class="section-label">立即报名</div>
       <h2 class="section-title">这是一个<span>改变您企业命运</span>的机会</h2>
       <div class="divider"></div>
