@@ -255,7 +255,86 @@
     .stat-label { font-size: .9rem; color: var(--muted); margin-top: .5rem; line-height: 1.5; }
     .stat-source { font-size: .7rem; color: #556; margin-top: .5rem; font-style: italic; }
 
-    /* Data bars */
+    /* ── Dual Comparison Chart ─────────────────────────────────────── */
+    .compare-chart { margin-top: 3.5rem; }
+    .compare-legend {
+      display: flex; gap: 1.6rem; flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .legend-item { display: flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 600; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+    .legend-dot.global { background: linear-gradient(90deg, var(--purple), var(--cyan)); }
+    .legend-dot.my     { background: linear-gradient(90deg, #f9a825, #e17055); }
+
+    .compare-row { margin-bottom: 1.6rem; }
+    .compare-industry {
+      font-size: .88rem; font-weight: 600; color: var(--text);
+      margin-bottom: .5rem;
+    }
+    .compare-bars { display: flex; flex-direction: column; gap: .35rem; }
+    .bar-line { display: flex; align-items: center; gap: .7rem; }
+    .bar-tag {
+      font-size: .7rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; width: 34px; flex-shrink: 0; text-align: right;
+    }
+    .bar-tag.global { color: var(--cyan); }
+    .bar-tag.my     { color: var(--gold); }
+    .bar-track {
+      flex: 1; height: 9px; background: rgba(255,255,255,.07);
+      border-radius: 5px; overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%; border-radius: 5px; width: 0;
+      transition: width 1.5s ease;
+    }
+    .bar-fill.global { background: linear-gradient(90deg, var(--purple), var(--cyan)); }
+    .bar-fill.my     { background: linear-gradient(90deg, #f9a825, #e17055); }
+    .bar-pct {
+      font-size: .82rem; font-weight: 700; width: 36px;
+      flex-shrink: 0; text-align: right;
+    }
+    .bar-pct.global { color: var(--cyan); }
+    .bar-pct.my     { color: var(--gold); }
+
+    /* Gap badge */
+    .gap-badge {
+      display: inline-block; margin-left: .5rem;
+      background: rgba(225,112,85,.15);
+      border: 1px solid rgba(225,112,85,.3);
+      color: var(--red); font-size: .68rem; font-weight: 700;
+      padding: .1rem .45rem; border-radius: 50px; vertical-align: middle;
+    }
+
+    /* First mover advantage */
+    .fma-box {
+      background: linear-gradient(135deg, rgba(108,92,231,.12), rgba(0,206,201,.08));
+      border: 1px solid rgba(108,92,231,.35);
+      border-radius: calc(var(--radius) * 1.2);
+      padding: 2.5rem; margin-top: 3rem;
+    }
+    .fma-title {
+      font-size: 1.35rem; font-weight: 900; color: var(--white);
+      margin-bottom: .5rem;
+    }
+    .fma-title span {
+      background: linear-gradient(135deg, var(--gold), var(--red));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .fma-sub { color: var(--muted); font-size: .95rem; margin-bottom: 2rem; }
+    .fma-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.2rem;
+    }
+    .fma-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.2rem;
+    }
+    .fma-card-icon { font-size: 1.5rem; margin-bottom: .5rem; }
+    .fma-card-title { font-weight: 700; font-size: .9rem; color: var(--white); margin-bottom: .35rem; }
+    .fma-card-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data bars (legacy, kept for safety) */
     .data-bars { margin-top: 3.5rem; }
     .data-bar-row { margin-bottom: 1.4rem; }
     .data-bar-label {
@@ -844,35 +923,176 @@
     </div>
 
     <!-- Data bars -->
-    <div class="data-bars reveal" style="margin-top:4rem">
-      <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:2rem;color:var(--white)">各行业 AI 采用率（全球数据，2024）</h3>
-      <div class="data-bar-row">
-        <div class="data-bar-label"><span class="data-bar-text">🏦 金融与银行业</span><span class="data-bar-pct">78%</span></div>
-        <div class="data-bar-track"><div class="data-bar-fill" data-width="78"></div></div>
+    <!-- ── Dual Comparison Chart ─────────────────────────────────── -->
+    <div class="compare-chart reveal" style="margin-top:4rem">
+      <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:.6rem;color:var(--white)">
+        各行业 AI 采用率：<span style="background:linear-gradient(90deg,var(--violet),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent">全球</span>
+        vs
+        <span style="background:linear-gradient(90deg,#f9a825,var(--red));-webkit-background-clip:text;-webkit-text-fill-color:transparent">马来西亚</span>
+        （2024年数据）
+      </h3>
+      <p style="font-size:.78rem;color:#445;margin-bottom:1.6rem">* 全球数据来源：麦肯锡、IBM、Gartner 综合报告；马来西亚数据来源：MDEC 数字脉搏调查、SME Corp Malaysia、世界银行马来西亚数字经济报告（均为行业估算）</p>
+
+      <div class="compare-legend">
+        <div class="legend-item"><div class="legend-dot global"></div>全球平均</div>
+        <div class="legend-item"><div class="legend-dot my"></div>马来西亚</div>
       </div>
-      <div class="data-bar-row">
-        <div class="data-bar-label"><span class="data-bar-text">🏭 制造业</span><span class="data-bar-pct">65%</span></div>
-        <div class="data-bar-track"><div class="data-bar-fill" data-width="65"></div></div>
+
+      <!-- 金融与银行业 -->
+      <div class="compare-row">
+        <div class="compare-industry">🏦 金融与银行业 <span class="gap-badge">差距 43%</span></div>
+        <div class="compare-bars">
+          <div class="bar-line">
+            <span class="bar-tag global">全球</span>
+            <div class="bar-track"><div class="bar-fill global" data-width="78"></div></div>
+            <span class="bar-pct global">78%</span>
+          </div>
+          <div class="bar-line">
+            <span class="bar-tag my">大马</span>
+            <div class="bar-track"><div class="bar-fill my" data-width="35"></div></div>
+            <span class="bar-pct my">35%</span>
+          </div>
+        </div>
       </div>
-      <div class="data-bar-row">
-        <div class="data-bar-label"><span class="data-bar-text">🛒 零售与电商</span><span class="data-bar-pct">61%</span></div>
-        <div class="data-bar-track"><div class="data-bar-fill" data-width="61"></div></div>
+
+      <!-- 制造业 -->
+      <div class="compare-row">
+        <div class="compare-industry">🏭 制造业 <span class="gap-badge">差距 47%</span></div>
+        <div class="compare-bars">
+          <div class="bar-line">
+            <span class="bar-tag global">全球</span>
+            <div class="bar-track"><div class="bar-fill global" data-width="65"></div></div>
+            <span class="bar-pct global">65%</span>
+          </div>
+          <div class="bar-line">
+            <span class="bar-tag my">大马</span>
+            <div class="bar-track"><div class="bar-fill my" data-width="18"></div></div>
+            <span class="bar-pct my">18%</span>
+          </div>
+        </div>
       </div>
-      <div class="data-bar-row">
-        <div class="data-bar-label"><span class="data-bar-text">🏥 医疗健康</span><span class="data-bar-pct">57%</span></div>
-        <div class="data-bar-track"><div class="data-bar-fill" data-width="57"></div></div>
+
+      <!-- 零售与电商 -->
+      <div class="compare-row">
+        <div class="compare-industry">🛒 零售与电商 <span class="gap-badge">差距 46%</span></div>
+        <div class="compare-bars">
+          <div class="bar-line">
+            <span class="bar-tag global">全球</span>
+            <div class="bar-track"><div class="bar-fill global" data-width="61"></div></div>
+            <span class="bar-pct global">61%</span>
+          </div>
+          <div class="bar-line">
+            <span class="bar-tag my">大马</span>
+            <div class="bar-track"><div class="bar-fill my" data-width="15"></div></div>
+            <span class="bar-pct my">15%</span>
+          </div>
+        </div>
       </div>
-      <div class="data-bar-row">
-        <div class="data-bar-label"><span class="data-bar-text">🍽️ 餐饮与食品</span><span class="data-bar-pct">42%</span></div>
-        <div class="data-bar-track"><div class="data-bar-fill" data-width="42"></div></div>
+
+      <!-- 医疗健康 -->
+      <div class="compare-row">
+        <div class="compare-industry">🏥 医疗健康 <span class="gap-badge">差距 45%</span></div>
+        <div class="compare-bars">
+          <div class="bar-line">
+            <span class="bar-tag global">全球</span>
+            <div class="bar-track"><div class="bar-fill global" data-width="57"></div></div>
+            <span class="bar-pct global">57%</span>
+          </div>
+          <div class="bar-line">
+            <span class="bar-tag my">大马</span>
+            <div class="bar-track"><div class="bar-fill my" data-width="12"></div></div>
+            <span class="bar-pct my">12%</span>
+          </div>
+        </div>
       </div>
-      <div class="data-bar-row">
-        <div class="data-bar-label"><span class="data-bar-text">🏗️ 建筑与房地产</span><span class="data-bar-pct">38%</span></div>
-        <div class="data-bar-track"><div class="data-bar-fill" data-width="38"></div></div>
+
+      <!-- 餐饮与食品 -->
+      <div class="compare-row">
+        <div class="compare-industry">🍽️ 餐饮与食品 <span class="gap-badge">差距 34%</span></div>
+        <div class="compare-bars">
+          <div class="bar-line">
+            <span class="bar-tag global">全球</span>
+            <div class="bar-track"><div class="bar-fill global" data-width="42"></div></div>
+            <span class="bar-pct global">42%</span>
+          </div>
+          <div class="bar-line">
+            <span class="bar-tag my">大马</span>
+            <div class="bar-track"><div class="bar-fill my" data-width="8"></div></div>
+            <span class="bar-pct my">8%</span>
+          </div>
+        </div>
       </div>
-      <div class="data-bar-row">
-        <div class="data-bar-label"><span class="data-bar-text">🎓 教育培训</span><span class="data-bar-pct">35%</span></div>
-        <div class="data-bar-track"><div class="data-bar-fill" data-width="35"></div></div>
+
+      <!-- 建筑与房地产 -->
+      <div class="compare-row">
+        <div class="compare-industry">🏗️ 建筑与房地产 <span class="gap-badge">差距 31%</span></div>
+        <div class="compare-bars">
+          <div class="bar-line">
+            <span class="bar-tag global">全球</span>
+            <div class="bar-track"><div class="bar-fill global" data-width="38"></div></div>
+            <span class="bar-pct global">38%</span>
+          </div>
+          <div class="bar-line">
+            <span class="bar-tag my">大马</span>
+            <div class="bar-track"><div class="bar-fill my" data-width="7"></div></div>
+            <span class="bar-pct my">7%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 教育培训 -->
+      <div class="compare-row">
+        <div class="compare-industry">🎓 教育培训 <span class="gap-badge">差距 21%</span></div>
+        <div class="compare-bars">
+          <div class="bar-line">
+            <span class="bar-tag global">全球</span>
+            <div class="bar-track"><div class="bar-fill global" data-width="35"></div></div>
+            <span class="bar-pct global">35%</span>
+          </div>
+          <div class="bar-line">
+            <span class="bar-tag my">大马</span>
+            <div class="bar-track"><div class="bar-fill my" data-width="14"></div></div>
+            <span class="bar-pct my">14%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── First Mover Advantage Box ──────────────────────────────── -->
+      <div class="fma-box">
+        <div class="fma-title">🏆 数字差距 = 您的<span>先行者优势</span></div>
+        <div class="fma-sub">马来西亚与全球的AI采用率差距平均高达 38%——这不是落后，这是机会窗口。<br/>现在转型的企业，将在竞争对手还没反应过来之前，已经建立起无法超越的护城河。</div>
+        <div class="fma-grid">
+          <div class="fma-card">
+            <div class="fma-card-icon">🥇</div>
+            <div class="fma-card-title">低竞争，大优势</div>
+            <div class="fma-card-desc">当您行业中只有 10-20% 的同行在用AI，您先转型就等于拥有了80%同行没有的竞争武器。</div>
+          </div>
+          <div class="fma-card">
+            <div class="fma-card-icon">💸</div>
+            <div class="fma-card-title">现在是成本最低时机</div>
+            <div class="fma-card-desc">AI工具价格每年下降30-40%，现在投入的成本，比三年后等"普及了再说"要低得多。</div>
+          </div>
+          <div class="fma-card">
+            <div class="fma-card-icon">🏛️</div>
+            <div class="fma-card-title">政府激励正在推进</div>
+            <div class="fma-card-desc">马来西亚MyDIGITAL蓝图为中小企业提供数字化补贴、税收减免，越早行动，享受支持越多。</div>
+          </div>
+          <div class="fma-card">
+            <div class="fma-card-icon">⏰</div>
+            <div class="fma-card-title">窗口期不会永远开着</div>
+            <div class="fma-card-desc">一旦竞争对手完成转型，市场格局将重新固化。先行者占据份额，后来者只能抢剩下的。</div>
+          </div>
+          <div class="fma-card">
+            <div class="fma-card-icon">🌏</div>
+            <div class="fma-card-title">抢占东南亚增长红利</div>
+            <div class="fma-card-desc">东南亚是全球增长最快的数字经济区域，AI驱动的马来西亚企业更有机会把业务扩展到区域市场。</div>
+          </div>
+          <div class="fma-card">
+            <div class="fma-card-icon">🧲</div>
+            <div class="fma-card-title">吸引顶尖人才和客户</div>
+            <div class="fma-card-desc">"我们是AI驱动的企业"——这句话足以让您在招聘和客户获取上，比传统竞争对手高出一个维度。</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1655,9 +1875,9 @@
   counters.forEach(el => io.observe(el));
 })();
 
-/* ── Data Bar Animation ──────────────────────────────────────────────────── */
+/* ── Bar Animation (dual comparison + legacy) ───────────────────────────── */
 (function() {
-  const fills = document.querySelectorAll('.data-bar-fill[data-width]');
+  const fills = document.querySelectorAll('.bar-fill[data-width], .data-bar-fill[data-width]');
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1665,7 +1885,7 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15 });
   fills.forEach(el => io.observe(el));
 })();
 
