@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>马来西亚中小企业AI转型峰会 | 免费报名</title>
+  <meta name="description" content="一天课程彻底改变您的企业运营。学习AI如何降低成本、提高绩效，让您的企业在竞争中立于不败之地。" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Variables ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #050b1f;
+      --deep:   #0d1535;
+      --card:   #111a3a;
+      --border: #1e2d5a;
+      --purple: #6c5ce7;
+      --violet: #a29bfe;
+      --cyan:   #00cec9;
+      --gold:   #fdcb6e;
+      --red:    #e17055;
+      --text:   #e8eaf6;
+      --muted:  #8892b0;
+      --white:  #ffffff;
+      --radius: 14px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.45);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── Scrollbar ─────────────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--deep); }
+    ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
+
+    /* ─── Nav ───────────────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      background: rgba(5,11,31,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.3rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--purple), #4834d4);
+      color: #fff; border: none; padding: .5rem 1.4rem;
+      border-radius: 50px; font-size: .9rem; font-weight: 700;
+      cursor: pointer; transition: transform .2s, box-shadow .2s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(108,92,231,.5); }
+
+    /* ─── Hero ──────────────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 20% 50%, #1a0a4e 0%, transparent 50%),
+                  radial-gradient(ellipse at 80% 20%, #003d3d 0%, transparent 40%),
+                  var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      padding: 100px 2rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    #particles-canvas {
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .hero-inner {
+      text-align: center; max-width: 860px; position: relative; z-index: 2;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(108,92,231,.2);
+      border: 1px solid var(--purple);
+      color: var(--violet);
+      padding: .4rem 1.2rem; border-radius: 50px;
+      font-size: .85rem; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 1.6rem;
+      animation: fadeDown .8s ease;
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 900; line-height: 1.2;
+      margin-bottom: 1rem;
+      animation: fadeDown .9s ease .1s both;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, var(--violet) 0%, var(--cyan) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--muted); margin-bottom: .8rem;
+      animation: fadeDown 1s ease .2s both;
+    }
+    .hero-highlight {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--gold); font-weight: 700; margin-bottom: 2.4rem;
+      animation: fadeDown 1s ease .25s both;
+    }
+    .hero-btns {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 3rem;
+      animation: fadeUp 1s ease .4s both;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--purple), #4834d4);
+      color: #fff; border: none; padding: .85rem 2.4rem;
+      border-radius: 50px; font-size: 1.05rem; font-weight: 700;
+      cursor: pointer; transition: all .25s; text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(108,92,231,.55); }
+    .btn-outline {
+      background: transparent; color: var(--violet);
+      border: 2px solid var(--purple); padding: .85rem 2.4rem;
+      border-radius: 50px; font-size: 1.05rem; font-weight: 700;
+      cursor: pointer; transition: all .25s; text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: rgba(108,92,231,.15); transform: translateY(-3px); }
+
+    /* Countdown */
+    .countdown-wrap { animation: fadeUp 1s ease .5s both; }
+    .countdown-label {
+      font-size: .85rem; color: var(--muted); letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: .8rem;
+    }
+    .countdown {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    }
+    .cd-box {
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: .8rem 1.2rem; min-width: 72px; text-align: center;
+    }
+    .cd-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 2rem; font-weight: 700; color: var(--cyan);
+      display: block; line-height: 1;
+    }
+    .cd-unit { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* Event info strip */
+    .event-strip {
+      display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+      margin-top: 2.5rem;
+      animation: fadeUp 1s ease .6s both;
+    }
+    .event-item {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .9rem; color: var(--muted);
+    }
+    .event-item .icon { font-size: 1.1rem; }
+    .event-item strong { color: var(--text); }
+
+    /* ─── Section Base ───────────────────────────────────────────────────── */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: .8rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--purple); font-weight: 600; margin-bottom: .8rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900; line-height: 1.25; margin-bottom: 1rem;
+    }
+    .section-title span {
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .section-desc { color: var(--muted); max-width: 620px; font-size: 1.05rem; }
+    .divider {
+      width: 60px; height: 4px;
+      background: linear-gradient(90deg, var(--purple), var(--cyan));
+      border-radius: 2px; margin: 1.2rem 0 2.4rem;
+    }
+
+    /* ─── Pain Points ────────────────────────────────────────────────────── */
+    #pain {
+      background: linear-gradient(180deg, var(--navy) 0%, var(--deep) 100%);
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .pain-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: transform .3s, border-color .3s;
+      position: relative; overflow: hidden;
+    }
+    .pain-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+    }
+    .pain-card:hover { transform: translateY(-5px); border-color: var(--purple); }
+    .pain-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .pain-headline {
+      font-size: 1.1rem; font-weight: 700; color: var(--white);
+      margin-bottom: .7rem; line-height: 1.4;
+    }
+    .pain-desc { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── Stats ─────────────────────────────────────────────────────────── */
+    #stats {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-intro { max-width: 740px; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem; margin-top: 3rem;
+    }
+    .stat-card {
+      text-align: center; padding: 2rem 1.5rem;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    .stat-number {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 3rem; font-weight: 700; display: block;
+      background: linear-gradient(135deg, var(--gold), var(--red));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .stat-unit { color: var(--violet); font-size: 1.2rem; font-weight: 700; }
+    .stat-label { font-size: .9rem; color: var(--muted); margin-top: .5rem; line-height: 1.5; }
+    .stat-source { font-size: .7rem; color: #556; margin-top: .5rem; font-style: italic; }
+
+    /* Data bars */
+    .data-bars { margin-top: 3.5rem; }
+    .data-bar-row { margin-bottom: 1.4rem; }
+    .data-bar-label {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: .4rem;
+    }
+    .data-bar-text { font-size: .9rem; font-weight: 500; }
+    .data-bar-pct { font-size: .9rem; color: var(--cyan); font-weight: 700; }
+    .data-bar-track {
+      height: 8px; background: rgba(255,255,255,.08);
+      border-radius: 4px; overflow: hidden;
+    }
+    .data-bar-fill {
+      height: 100%; border-radius: 4px;
+      background: linear-gradient(90deg, var(--purple), var(--cyan));
+      width: 0; transition: width 1.5s ease;
+    }
+
+    /* ─── Questions ─────────────────────────────────────────────────────── */
+    #questions {
+      background: radial-gradient(ellipse at 70% 50%, #1a0a4e 0%, transparent 55%),
+                  var(--navy);
+    }
+    .q-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .q-card {
+      background: var(--card);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.8rem;
+      transition: border-color .3s, transform .3s;
+    }
+    .q-card:hover { border-color: var(--cyan); transform: translateY(-4px); }
+    .q-num {
+      font-family: 'Rajdhani', sans-serif; font-size: 2.5rem; font-weight: 700;
+      color: rgba(162,155,254,.2); display: block; line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .q-text {
+      font-size: 1rem; font-weight: 600; color: var(--white); line-height: 1.5;
+    }
+    .q-hint { font-size: .85rem; color: var(--muted); margin-top: .6rem; }
+
+    /* ─── AI Real Power ─────────────────────────────────────────────────── */
+    #realpower {
+      background: var(--deep);
+    }
+    .rp-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center; margin-top: 3rem;
+    }
+    @media (max-width: 768px) { .rp-layout { grid-template-columns: 1fr; gap: 2rem; } }
+    .rp-myth {
+      background: rgba(225,112,85,.08);
+      border: 1px solid rgba(225,112,85,.3);
+      border-radius: var(--radius); padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .rp-myth-title { color: var(--red); font-weight: 700; margin-bottom: .5rem; font-size: 1rem; }
+    .rp-myth-text { font-size: .9rem; color: var(--muted); }
+    .rp-truth {
+      background: rgba(0,206,201,.08);
+      border: 1px solid rgba(0,206,201,.3);
+      border-radius: var(--radius); padding: 1.5rem;
+    }
+    .rp-truth-title { color: var(--cyan); font-weight: 700; margin-bottom: .8rem; font-size: 1rem; }
+    .rp-list { list-style: none; }
+    .rp-list li {
+      padding: .5rem 0; border-bottom: 1px solid var(--border);
+      font-size: .92rem; display: flex; gap: .7rem; align-items: flex-start;
+    }
+    .rp-list li:last-child { border-bottom: none; }
+    .rp-list li::before { content: '✦'; color: var(--cyan); flex-shrink: 0; margin-top: .15rem; }
+    .rp-right { }
+    .ai-capability {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem;
+      margin-bottom: 1rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+      transition: border-color .3s, transform .3s;
+    }
+    .ai-capability:hover { border-color: var(--violet); transform: translateX(5px); }
+    .cap-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .cap-title { font-weight: 700; font-size: .95rem; color: var(--white); margin-bottom: .3rem; }
+    .cap-desc { font-size: .85rem; color: var(--muted); line-height: 1.5; }
+
+    /* ─── Course Agenda ──────────────────────────────────────────────────── */
+    #course {
+      background: var(--navy);
+    }
+    .course-layout {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 4rem; align-items: start; margin-top: 3rem;
+    }
+    @media (max-width: 768px) { .course-layout { grid-template-columns: 1fr; gap: 2rem; } }
+    .course-sidebar {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem; position: sticky; top: 80px;
+    }
+    .cs-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.2rem; color: var(--white); }
+    .cs-item {
+      display: flex; gap: .8rem; align-items: center;
+      padding: .7rem 0; border-bottom: 1px solid var(--border);
+      font-size: .9rem;
+    }
+    .cs-item:last-child { border-bottom: none; }
+    .cs-icon { font-size: 1.1rem; }
+    .cs-val { color: var(--text); font-weight: 500; }
+    .cs-key { color: var(--muted); font-size: .8rem; }
+    .agenda { }
+    .agenda-session {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.8rem;
+      margin-bottom: 1.2rem; position: relative; overflow: hidden;
+      transition: border-color .3s;
+    }
+    .agenda-session:hover { border-color: var(--purple); }
+    .agenda-session::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+      background: linear-gradient(180deg, var(--purple), var(--cyan));
+    }
+    .session-time {
+      font-size: .8rem; color: var(--cyan); font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: .4rem;
+    }
+    .session-title { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: .6rem; }
+    .session-topics { list-style: none; }
+    .session-topics li {
+      font-size: .88rem; color: var(--muted); padding: .25rem 0;
+      display: flex; gap: .5rem;
+    }
+    .session-topics li::before { content: '→'; color: var(--violet); }
+
+    /* ─── Why Executives ─────────────────────────────────────────────────── */
+    #executives {
+      background: linear-gradient(135deg, var(--deep) 0%, #0a0e27 100%);
+    }
+    .exec-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .exec-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      text-align: center; transition: all .3s;
+    }
+    .exec-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+    .exec-card::after {
+      content: '';
+      display: block; width: 40px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--red));
+      border-radius: 2px; margin: 1rem auto 0;
+    }
+    .exec-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .exec-title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: .7rem; }
+    .exec-desc { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+    .exec-quote {
+      background: rgba(253,203,110,.08);
+      border: 1px solid rgba(253,203,110,.25);
+      border-radius: var(--radius); padding: 2rem;
+      text-align: center; margin-top: 3rem;
+    }
+    .exec-quote p {
+      font-size: 1.15rem; font-weight: 600; color: var(--gold);
+      font-style: italic; line-height: 1.7;
+    }
+
+    /* ─── Case Studies ───────────────────────────────────────────────────── */
+    #cases {
+      background: var(--deep);
+    }
+    .cases-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .case-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: transform .3s, border-color .3s;
+    }
+    .case-card:hover { transform: translateY(-5px); border-color: var(--cyan); }
+    .case-header {
+      padding: 1.5rem; display: flex; gap: 1rem; align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .case-industry-icon { font-size: 2rem; }
+    .case-industry { font-size: .8rem; color: var(--cyan); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+    .case-company { font-size: 1rem; font-weight: 700; color: var(--white); }
+    .case-body { padding: 1.5rem; }
+    .case-problem { font-size: .88rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
+    .case-problem strong { color: var(--red); }
+    .case-solution { font-size: .88rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.6; }
+    .case-solution strong { color: var(--cyan); }
+    .case-results {
+      display: flex; gap: .8rem; flex-wrap: wrap;
+    }
+    .result-badge {
+      background: rgba(108,92,231,.15);
+      border: 1px solid rgba(108,92,231,.3);
+      color: var(--violet); padding: .3rem .8rem;
+      border-radius: 50px; font-size: .8rem; font-weight: 600;
+    }
+
+    /* ─── Registration ───────────────────────────────────────────────────── */
+    #register {
+      background: radial-gradient(ellipse at 30% 50%, #1a0a4e 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 50%, #003d3d 0%, transparent 50%),
+                  var(--navy);
+    }
+    .reg-layout {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 4rem; align-items: start; margin-top: 3rem;
+    }
+    @media (max-width: 860px) { .reg-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .reg-perks { }
+    .perk-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      margin-bottom: 1.8rem;
+    }
+    .perk-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: rgba(108,92,231,.15);
+      border: 1px solid rgba(108,92,231,.3);
+      border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.3rem;
+    }
+    .perk-title { font-weight: 700; color: var(--white); margin-bottom: .3rem; }
+    .perk-desc { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+    .reg-urgency {
+      background: rgba(225,112,85,.1);
+      border: 1px solid rgba(225,112,85,.3);
+      border-radius: var(--radius); padding: 1rem 1.4rem;
+      display: flex; gap: .8rem; align-items: center; margin-top: 2rem;
+    }
+    .urgency-icon { font-size: 1.4rem; }
+    .urgency-text { font-size: .9rem; color: var(--red); font-weight: 600; }
+
+    /* Form */
+    .reg-form-wrap {
+      background: var(--card);
+      border: 1px solid var(--border); border-radius: calc(var(--radius) * 1.5);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+    .form-title { font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: .4rem; }
+    .form-subtitle { font-size: .9rem; color: var(--muted); margin-bottom: 2rem; }
+    .form-group { margin-bottom: 1.4rem; }
+    label {
+      display: block; font-size: .85rem; font-weight: 600;
+      color: var(--violet); margin-bottom: .5rem; letter-spacing: .5px;
+    }
+    label .req { color: var(--red); margin-left: 2px; }
+    input, select, textarea {
+      width: 100%; background: rgba(255,255,255,.05);
+      border: 1px solid var(--border); border-radius: 10px;
+      color: var(--text); font-family: 'Noto Sans SC', sans-serif;
+      font-size: .95rem; padding: .8rem 1rem;
+      outline: none; transition: border-color .25s, box-shadow .25s;
+    }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(108,92,231,.2);
+    }
+    select option { background: var(--deep); color: var(--text); }
+    .form-error {
+      font-size: .8rem; color: var(--red); margin-top: .4rem;
+      display: none;
+    }
+    .form-group.error input,
+    .form-group.error select { border-color: var(--red); }
+    .form-group.error .form-error { display: block; }
+    .form-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--purple), #4834d4);
+      color: #fff; border: none; padding: 1rem;
+      border-radius: 50px; font-size: 1.05rem; font-weight: 700;
+      cursor: pointer; transition: all .25s; margin-top: .5rem;
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(108,92,231,.5); }
+    .form-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+    .form-note { font-size: .78rem; color: var(--muted); text-align: center; margin-top: 1rem; }
+
+    /* Success / Error states */
+    .form-success {
+      display: none; text-align: center; padding: 2rem;
+    }
+    .form-success .success-icon { font-size: 4rem; margin-bottom: 1rem; }
+    .form-success h3 { font-size: 1.4rem; color: var(--cyan); margin-bottom: .7rem; }
+    .form-success p { color: var(--muted); font-size: .95rem; }
+
+    /* ─── Footer ─────────────────────────────────────────────────────────── */
+    footer {
+      background: #030710;
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Rajdhani', sans-serif; font-size: 1.5rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: .8rem;
+    }
+    .footer-tagline { color: var(--muted); font-size: .9rem; margin-bottom: 1.5rem; }
+    .footer-divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem auto; max-width: 400px; }
+    .footer-copy { color: #445; font-size: .8rem; }
+    .footer-copy a { color: var(--muted); text-decoration: none; }
+
+    /* ─── Animations ─────────────────────────────────────────────────────── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(108,92,231,.5); }
+      50%       { box-shadow: 0 0 0 12px rgba(108,92,231,0); }
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── Responsive ─────────────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.2rem; }
+      nav { padding: 0 1rem; }
+      .reg-form-wrap { padding: 1.8rem 1.4rem; }
+      .course-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-logo">AI TRANSFORM MY</div>
+  <a href="#register" class="nav-cta">立即免费报名</a>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-inner">
+    <div class="hero-badge">🇲🇾 马来西亚中小企业专属峰会</div>
+    <h1 class="hero-title">
+      企业不转型，<span>下一个消失的</span><br/>就是你
+    </h1>
+    <p class="hero-sub">一天课程 · 彻底颠覆您的企业运营模式</p>
+    <p class="hero-highlight">✦ 马来西亚中小企业 AI 转型峰会 ✦ 完全免费 ✦</p>
+    <div class="hero-btns">
+      <a href="#register" class="btn-primary">🚀 立即免费报名</a>
+      <a href="#pain" class="btn-outline">了解为什么</a>
+    </div>
+
+    <div class="countdown-wrap">
+      <div class="countdown-label">距离活动开始还有</div>
+      <div class="countdown">
+        <div class="cd-box"><span class="cd-num" id="cd-days">00</span><span class="cd-unit">天</span></div>
+        <div class="cd-box"><span class="cd-num" id="cd-hours">00</span><span class="cd-unit">时</span></div>
+        <div class="cd-box"><span class="cd-num" id="cd-mins">00</span><span class="cd-unit">分</span></div>
+        <div class="cd-box"><span class="cd-num" id="cd-secs">00</span><span class="cd-unit">秒</span></div>
+      </div>
+    </div>
+
+    <div class="event-strip">
+      <div class="event-item"><span class="icon">📅</span><div><strong>2026年7月19日（星期日）</strong><div>全天课程</div></div></div>
+      <div class="event-item"><span class="icon">📍</span><div><strong>吉隆坡 · 地点待定</strong><div>地点确认后另行通知</div></div></div>
+      <div class="event-item"><span class="icon">👥</span><div><strong>限额 200 名</strong><div>先到先得</div></div></div>
+      <div class="event-item"><span class="icon">💰</span><div><strong>完全免费</strong><div>零费用参与</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PAIN POINTS ═══════════════════════════════════════════════════════ -->
+<section id="pain">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">企业痛点</div>
+      <h2 class="section-title">您是否正在面临这些<span>致命问题</span>？</h2>
+      <div class="divider"></div>
+      <p class="section-desc">全球经济波动，马来西亚中小企业正在经历前所未有的生存压力。这些痛点，您有几个？</p>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-icon">📉</div>
+        <div class="pain-headline">企业成本越来越高，利润越来越薄——您还能撑多久？</div>
+        <div class="pain-desc">薪资、租金、原材料、物流成本年年攀升，但市场竞争激烈，产品价格却无法大幅上涨。利润空间被一点点侵蚀，每个月都在靠意志力硬撑。</div>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">📂</div>
+        <div class="pain-headline">文件堆积如山，数据无从整理，员工疲于奔命却毫无效率</div>
+        <div class="pain-desc">合同、发票、报告、客户资料、库存记录……每天产生大量文件，却没有人有时间系统整理。一份文件找半小时，重要决策因此被延误。</div>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">🔄</div>
+        <div class="pain-headline">重复性工作吞噬了员工 80% 的时间，真正的创造力在哪里？</div>
+        <div class="pain-desc">数据录入、报表汇总、邮件回复、排班调度……这些机械性工作每天消耗团队大量精力，真正需要人类智慧的工作却无暇顾及。</div>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">👥</div>
+        <div class="pain-headline">招人难，留人更难——企业陷入永无止境的人力资源困局</div>
+        <div class="pain-desc">招聘成本高、培训周期长、员工流失率居高不下。好不容易培养的人才离职，所有知识和经验随之带走，企业只能从零开始。</div>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">🔍</div>
+        <div class="pain-headline">决策缺乏数据支撑，凭感觉经营的时代已经结束了</div>
+        <div class="pain-desc">市场瞬息万变，靠经验和直觉做决策的风险越来越高。竞争对手已经用数据驱动每一个商业决策，而您还在依赖"感觉"。</div>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">😤</div>
+        <div class="pain-headline">客户越来越难伺候，服务响应慢一步就被竞争对手抢走</div>
+        <div class="pain-desc">客户要求越来越高，响应越来越快，个性化服务成为标配。人工客服成本高、效率低，漏接询盘、回复慢，客户流失就在一瞬间。</div>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">⚡</div>
+        <div class="pain-headline">您的竞争对手已经悄悄用 AI 省下大量成本，而您还在观望</div>
+        <div class="pain-desc">不是危言耸听——已有企业用AI将运营成本降低30%，生产力提升40%。当他们继续扩张，您还在犹豫"AI是否适合我"，差距已经形成。</div>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">💡</div>
+        <div class="pain-headline">您的企业数据是一座金矿，但没有 AI，您永远挖不到</div>
+        <div class="pain-desc">销售数据、客户行为、市场趋势、运营指标……每天都在产生大量有价值的数据，但没有AI工具，这些数据永远只是数字，不是洞察。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GLOBAL STATS ═══════════════════════════════════════════════════════ -->
+<section id="stats">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">全球数据告诉您</div>
+      <h2 class="section-title">为什么<span>企业必须</span>拥抱 AI 转型</h2>
+      <div class="divider"></div>
+      <p class="section-desc">这不是趋势，这是生存。来自全球权威机构的数据，清晰呈现AI对商业世界的颠覆性影响。</p>
+    </div>
+
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <span class="stat-number" data-target="13">0</span>
+        <span class="stat-unit">万亿美元</span>
+        <div class="stat-label">AI 将在 2030 年为全球 GDP 贡献的额外价值</div>
+        <div class="stat-source">来源：麦肯锡全球研究院</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="40">0</span>
+        <span class="stat-unit">%</span>
+        <div class="stat-label">采用 AI 的企业平均生产力提升幅度</div>
+        <div class="stat-source">来源：IBM 商业价值研究院</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="30">0</span>
+        <span class="stat-unit">%</span>
+        <div class="stat-label">AI 自动化帮助企业降低运营成本</div>
+        <div class="stat-source">来源：麦肯锡报告 2024</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="85">0</span>
+        <span class="stat-unit">%</span>
+        <div class="stat-label">全球 500 强企业已启动 AI 转型战略</div>
+        <div class="stat-source">来源：世界经济论坛</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="75">0</span>
+        <span class="stat-unit">%</span>
+        <div class="stat-label">2025 年全球企业将从 AI 试点转为全面落地</div>
+        <div class="stat-source">来源：Gartner 预测</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="97">0</span>
+        <span class="stat-unit">百万</span>
+        <div class="stat-label">AI 将在 2025 年创造的新型就业岗位数量</div>
+        <div class="stat-source">来源：世界经济论坛</div>
+      </div>
+    </div>
+
+    <!-- Data bars -->
+    <div class="data-bars reveal" style="margin-top:4rem">
+      <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:2rem;color:var(--white)">各行业 AI 采用率（全球数据，2024）</h3>
+      <div class="data-bar-row">
+        <div class="data-bar-label"><span class="data-bar-text">🏦 金融与银行业</span><span class="data-bar-pct">78%</span></div>
+        <div class="data-bar-track"><div class="data-bar-fill" data-width="78"></div></div>
+      </div>
+      <div class="data-bar-row">
+        <div class="data-bar-label"><span class="data-bar-text">🏭 制造业</span><span class="data-bar-pct">65%</span></div>
+        <div class="data-bar-track"><div class="data-bar-fill" data-width="65"></div></div>
+      </div>
+      <div class="data-bar-row">
+        <div class="data-bar-label"><span class="data-bar-text">🛒 零售与电商</span><span class="data-bar-pct">61%</span></div>
+        <div class="data-bar-track"><div class="data-bar-fill" data-width="61"></div></div>
+      </div>
+      <div class="data-bar-row">
+        <div class="data-bar-label"><span class="data-bar-text">🏥 医疗健康</span><span class="data-bar-pct">57%</span></div>
+        <div class="data-bar-track"><div class="data-bar-fill" data-width="57"></div></div>
+      </div>
+      <div class="data-bar-row">
+        <div class="data-bar-label"><span class="data-bar-text">🍽️ 餐饮与食品</span><span class="data-bar-pct">42%</span></div>
+        <div class="data-bar-track"><div class="data-bar-fill" data-width="42"></div></div>
+      </div>
+      <div class="data-bar-row">
+        <div class="data-bar-label"><span class="data-bar-text">🏗️ 建筑与房地产</span><span class="data-bar-pct">38%</span></div>
+        <div class="data-bar-track"><div class="data-bar-fill" data-width="38"></div></div>
+      </div>
+      <div class="data-bar-row">
+        <div class="data-bar-label"><span class="data-bar-text">🎓 教育培训</span><span class="data-bar-pct">35%</span></div>
+        <div class="data-bar-track"><div class="data-bar-fill" data-width="35"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUESTIONS ═════════════════════════════════════════════════════════ -->
+<section id="questions">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">直击内心的问题</div>
+      <h2 class="section-title">请您认真回答<span>这 8 个问题</span></h2>
+      <div class="divider"></div>
+      <p class="section-desc">如果您对以下任何一个问题的答案是"是的"，那么这个课程就是为您准备的。</p>
+    </div>
+
+    <div class="q-grid">
+      <div class="q-card reveal">
+        <span class="q-num">01</span>
+        <div class="q-text">您是否曾经因为找不到一份文件，而耽误了一个重要决策或商机？</div>
+        <div class="q-hint">每年因文件管理混乱导致的商业损失，比您想象的要大得多。</div>
+      </div>
+      <div class="q-card reveal">
+        <span class="q-num">02</span>
+        <div class="q-text">您的团队每天有多少时间花在"复制粘贴"、"手动填表"等重复性工作上？</div>
+        <div class="q-hint">研究表明，员工平均每天花 2.5 小时在可被 AI 自动化的工作上。</div>
+      </div>
+      <div class="q-card reveal">
+        <span class="q-num">03</span>
+        <div class="q-text">您上一次基于完整数据分析做出的商业决策，是什么时候？</div>
+        <div class="q-hint">凭直觉经营已成过去式，AI 时代需要数据驱动的精准决策。</div>
+      </div>
+      <div class="q-card reveal">
+        <span class="q-num">04</span>
+        <div class="q-text">如果您的竞争对手用 AI 将成本降低了 30%，您是否还能在价格上与他们竞争？</div>
+        <div class="q-hint">成本优势是市场竞争的核心武器，AI 正在重新定义这个优势。</div>
+      </div>
+      <div class="q-card reveal">
+        <span class="q-num">05</span>
+        <div class="q-text">您的客户服务团队是否经常因为响应慢或信息不准确而让客户失望？</div>
+        <div class="q-hint">一个不满意的客户会告诉 10 个潜在客户，AI 客服可以彻底改变这个局面。</div>
+      </div>
+      <div class="q-card reveal">
+        <span class="q-num">06</span>
+        <div class="q-text">您的企业有没有沉睡的数据宝藏——那些从未被分析过的销售记录、客户行为、运营数据？</div>
+        <div class="q-hint">未被分析的数据就是被浪费的利润，AI 可以让这些数据说话。</div>
+      </div>
+      <div class="q-card reveal">
+        <span class="q-num">07</span>
+        <div class="q-text">如果您的核心员工明天突然离职，您的企业能否在一周内正常运作？</div>
+        <div class="q-hint">AI 可以将关键知识系统化，让企业不再依赖"不可替代的人"。</div>
+      </div>
+      <div class="q-card reveal">
+        <span class="q-num">08</span>
+        <div class="q-text">5 年后，如果 80% 的同行都已经完成 AI 转型，而您没有，您的企业将会在哪里？</div>
+        <div class="q-hint">转型从来都有成本，但不转型的代价，远比转型的成本更大。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AI REAL POWER ══════════════════════════════════════════════════════ -->
+<section id="realpower">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">打破 AI 的错误认知</div>
+      <h2 class="section-title">AI 不是只会画图、做影片<br/><span>它真正的力量在企业运营</span></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="rp-layout">
+      <div class="rp-left reveal">
+        <div class="rp-myth">
+          <div class="rp-myth-title">❌ 绝大多数人对 AI 的误解</div>
+          <div class="rp-myth-text">很多老板和高管认为 AI 只是用来生成图片、制作短视频、写广告文案……这些功能确实存在，但这只是 AI 能力的 5%。真正让企业受益的，是 AI 在运营层面的深度应用——那 95% 被大多数人忽视的部分。</div>
+        </div>
+        <div class="rp-truth">
+          <div class="rp-truth-title">✅ AI 真正解决的企业核心问题</div>
+          <ul class="rp-list">
+            <li>海量文件的自动整理、分类与关键信息提取</li>
+            <li>跨部门数据的自动汇总与分析报告生成</li>
+            <li>客户询盘的24小时自动回复与跟进</li>
+            <li>财务报表的自动核对与异常检测</li>
+            <li>员工培训材料的智能生成与知识库建设</li>
+            <li>合同条款的自动审查与风险标注</li>
+            <li>会议记录的实时转写、总结与行动项跟踪</li>
+            <li>市场竞情的自动监测与摘要报告</li>
+            <li>供应链数据的实时分析与预警</li>
+          </ul>
+        </div>
+      </div>
+      <div class="rp-right reveal">
+        <div class="ai-capability">
+          <div class="cap-icon">🗂️</div>
+          <div>
+            <div class="cap-title">文件与知识管理自动化</div>
+            <div class="cap-desc">AI 可在秒内扫描、分类并提取数千份文件中的关键信息。过去需要一名全职行政人员两周完成的工作，AI 30分钟搞定。</div>
+          </div>
+        </div>
+        <div class="ai-capability">
+          <div class="cap-icon">📊</div>
+          <div>
+            <div class="cap-title">数据分析与商业洞察</div>
+            <div class="cap-desc">将散落在各系统中的销售数据、财务数据、运营数据整合分析，生成可执行的商业洞察报告，辅助高层决策。</div>
+          </div>
+        </div>
+        <div class="ai-capability">
+          <div class="cap-icon">🤖</div>
+          <div>
+            <div class="cap-title">AI 企业助理（24/7 不间断）</div>
+            <div class="cap-desc">专属于您企业的 AI 助理，熟悉您的产品、流程、客户资料，能处理 70% 以上的日常询盘和内部查询，永不请假，永不犯人为错误。</div>
+          </div>
+        </div>
+        <div class="ai-capability">
+          <div class="cap-icon">⚙️</div>
+          <div>
+            <div class="cap-title">业务流程自动化</div>
+            <div class="cap-desc">从订单处理到发票生成，从招聘筛选到员工入职，AI 可以接管所有规则明确的重复性工作，让您的团队专注于真正创造价值的任务。</div>
+          </div>
+        </div>
+        <div class="ai-capability">
+          <div class="cap-icon">🧠</div>
+          <div>
+            <div class="cap-title">企业知识库与传承系统</div>
+            <div class="cap-desc">将企业多年积累的经验、流程、标准答案植入 AI，形成"企业大脑"。即使核心员工离职，知识也不会流失，新员工培训效率提升 80%。</div>
+          </div>
+        </div>
+        <div class="ai-capability">
+          <div class="cap-icon">📈</div>
+          <div>
+            <div class="cap-title">销售与市场智能化</div>
+            <div class="cap-desc">AI 分析客户行为模式，预测购买意向，自动个性化跟进，帮助销售团队聚焦最有价值的潜在客户，成交率平均提升 25-35%。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COURSE AGENDA ══════════════════════════════════════════════════════ -->
+<section id="course">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">一天课程大纲</div>
+      <h2 class="section-title">从零到落地——<span>一天彻底掌握</span> AI 转型路线图</h2>
+      <div class="divider"></div>
+      <p class="section-desc">不是泛泛而谈的 AI 介绍，而是专为中小企业高管和老板设计的实战课程。</p>
+    </div>
+
+    <div class="course-layout">
+      <div class="course-sidebar reveal">
+        <div class="cs-title">📋 课程概览</div>
+        <div class="cs-item">
+          <div class="cs-icon">📅</div>
+          <div><div class="cs-key">日期</div><div class="cs-val">2026年7月19日</div></div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-icon">⏰</div>
+          <div><div class="cs-key">时间</div><div class="cs-val">9:00 AM – 6:00 PM</div></div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-icon">📍</div>
+          <div><div class="cs-key">地点</div><div class="cs-val">吉隆坡（地点另行通知）</div></div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-icon">👤</div>
+          <div><div class="cs-key">适合对象</div><div class="cs-val">老板、高管、创始人、部门主管</div></div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-icon">💰</div>
+          <div><div class="cs-key">费用</div><div class="cs-val">完全免费</div></div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-icon">🗣️</div>
+          <div><div class="cs-key">授课语言</div><div class="cs-val">华语（粤语辅助）</div></div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-icon">🎁</div>
+          <div><div class="cs-key">赠品</div><div class="cs-val">AI工具手册 + 企业AI诊断报告</div></div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-icon">👥</div>
+          <div><div class="cs-key">名额</div><div class="cs-val">限额 200 名</div></div>
+        </div>
+      </div>
+
+      <div class="agenda reveal">
+        <div class="agenda-session">
+          <div class="session-time">09:00 – 10:30 · 第一节</div>
+          <div class="session-title">🌏 全球AI趋势与中小企业的生死抉择</div>
+          <ul class="session-topics">
+            <li>2025-2030全球AI商业化进程与马来西亚现状</li>
+            <li>不转型的代价：哪些行业正在被AI颠覆？</li>
+            <li>中小企业的AI优势：为什么"小"反而更容易转型</li>
+            <li>现场企业AI健康诊断——您的企业在哪个阶段？</li>
+          </ul>
+        </div>
+        <div class="agenda-session">
+          <div class="session-time">10:45 – 12:30 · 第二节</div>
+          <div class="session-title">🗂️ AI如何解决企业最头疼的文件与数据问题</div>
+          <ul class="session-topics">
+            <li>现场演示：AI在30秒内分析100份合同/文件</li>
+            <li>搭建企业专属知识库——让AI记住您企业的一切</li>
+            <li>数据整理自动化：从Excel到智能商业决策</li>
+            <li>实操：用AI建立部门工作流程自动化</li>
+          </ul>
+        </div>
+        <div class="agenda-session">
+          <div class="session-time">14:00 – 15:30 · 第三节</div>
+          <div class="session-title">🤖 AI企业助理：您的第一位"不请假的员工"</div>
+          <ul class="session-topics">
+            <li>什么是企业专属AI助理？它能做什么、不能做什么</li>
+            <li>现场搭建：为您的企业配置一个AI客服助理</li>
+            <li>AI如何处理客户询盘、投诉、跟进——全程自动化</li>
+            <li>高管的AI助理：日程管理、报告摘要、决策支持</li>
+          </ul>
+        </div>
+        <div class="agenda-session">
+          <div class="session-time">15:45 – 17:00 · 第四节</div>
+          <div class="session-title">📈 AI降本增效实战案例与落地路线图</div>
+          <ul class="session-topics">
+            <li>5个马来西亚本地企业AI转型真实案例拆解</li>
+            <li>30天AI转型行动计划：从哪里开始最见效？</li>
+            <li>AI工具选择指南：哪些适合中小企业、哪些是坑？</li>
+            <li>成本预算：AI转型到底需要多少钱？</li>
+          </ul>
+        </div>
+        <div class="agenda-session">
+          <div class="session-time">17:00 – 18:00 · 第五节</div>
+          <div class="session-title">❓ 开放Q&A + 一对一企业AI诊断</div>
+          <ul class="session-topics">
+            <li>现场解答您的企业AI转型具体疑问</li>
+            <li>一对一：导师为您分析企业最适合AI切入的场景</li>
+            <li>资源对接：AI工具供应商、实施伙伴推荐</li>
+            <li>颁发结业证书 + 合影留念</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY EXECUTIVES ══════════════════════════════════════════════════════ -->
+<section id="executives">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">写给老板和高管</div>
+      <h2 class="section-title">为什么<span>您作为领导者</span>，必须率先了解 AI？</h2>
+      <div class="divider"></div>
+      <p class="section-desc">AI转型不是IT部门的事，是老板和高管必须亲自主导的战略决策。</p>
+    </div>
+
+    <div class="exec-grid">
+      <div class="exec-card reveal">
+        <div class="exec-icon">🎯</div>
+        <div class="exec-title">AI 战略必须由老板来定，不能外包给员工</div>
+        <div class="exec-desc">AI 转型涉及企业核心流程重塑、文化变革和资源分配。这是只有老板才能拍板的决策，等您的员工来推动，通常已经太晚了。</div>
+      </div>
+      <div class="exec-card reveal">
+        <div class="exec-icon">⏰</div>
+        <div class="exec-title">AI助理让高管从"救火队长"变成"战略领袖"</div>
+        <div class="exec-desc">每天花在会议、邮件、报告审阅上的时间，70%可以被AI代劳。解放出来的时间，才是您真正用来思考战略和拓展业务的时间。</div>
+      </div>
+      <div class="exec-card reveal">
+        <div class="exec-icon">📱</div>
+        <div class="exec-title">随时掌握企业全局数据，决策快人一步</div>
+        <div class="exec-desc">AI 仪表板让您随时通过手机查看实时销售、库存、现金流、团队绩效数据，做出比竞争对手更快、更准确的商业决策。</div>
+      </div>
+      <div class="exec-card reveal">
+        <div class="exec-icon">🛡️</div>
+        <div class="exec-title">企业知识不再依赖"某个人"，抗风险能力大幅提升</div>
+        <div class="exec-desc">把核心员工的知识和流程系统化成AI知识库，即使关键人员离职，企业也能平稳运转，大幅降低人员风险。</div>
+      </div>
+      <div class="exec-card reveal">
+        <div class="exec-icon">🚀</div>
+        <div class="exec-title">用更少的人，做更多的事——这才是真正的规模化</div>
+        <div class="exec-desc">AI 让企业可以在不大幅增加人力成本的前提下扩大业务规模。这是中小企业突破增长瓶颈最有效的手段之一。</div>
+      </div>
+      <div class="exec-card reveal">
+        <div class="exec-icon">🌐</div>
+        <div class="exec-title">员工因有AI工具而留下——吸引和留住顶尖人才</div>
+        <div class="exec-desc">年轻一代的优秀人才更愿意加入"有未来"的公司。一家积极拥抱AI的企业，在人才吸引力上天然强于守旧的竞争对手。</div>
+      </div>
+    </div>
+
+    <div class="exec-quote reveal">
+      <p>"如果您不亲自了解AI，您就无法判断您的团队是否在正确地使用它。<br/>无知不是保护，无知是最大的企业风险。"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CASE STUDIES ════════════════════════════════════════════════════════ -->
+<section id="cases">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">真实案例</div>
+      <h2 class="section-title">他们已经做到了——<span>真实的 AI 转型故事</span></h2>
+      <div class="divider"></div>
+      <p class="section-desc">来自马来西亚和全球的真实企业案例，数据来自公开报告与行业研究，直接呈现AI如何改变企业命运。</p>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div class="case-industry-icon">🏭</div>
+          <div>
+            <div class="case-industry">制造业</div>
+            <div class="case-company">马来西亚中型制造商（零部件供应）</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-problem"><strong>痛点：</strong>每月产生超过500份供应商合同、质检报告、采购单，需要3名行政人员全职处理，经常出现数据录入错误导致订单延误。</div>
+          <div class="case-solution"><strong>AI解决方案：</strong>部署AI文件处理系统，自动提取、分类、录入关键数据，并自动核对供应链数据一致性，异常自动预警。</div>
+          <div class="case-results">
+            <span class="result-badge">✓ 行政成本降低 70%</span>
+            <span class="result-badge">✓ 处理速度快 20 倍</span>
+            <span class="result-badge">✓ 错误率接近零</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div class="case-industry-icon">🛒</div>
+          <div>
+            <div class="case-industry">零售连锁</div>
+            <div class="case-company">东南亚连锁零售品牌（20间分店）</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-problem"><strong>痛点：</strong>库存管理依赖经验判断，经常出现某些门店积压、另一些门店缺货的问题，每年因此损失约 RM 200万营业额。</div>
+          <div class="case-solution"><strong>AI解决方案：</strong>引入AI库存预测系统，分析历史销售、季节性、促销活动等20+维度数据，自动生成补货建议。</div>
+          <div class="case-results">
+            <span class="result-badge">✓ 库存准确率 +35%</span>
+            <span class="result-badge">✓ 积压减少 40%</span>
+            <span class="result-badge">✓ 年节省 RM 80万</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div class="case-industry-icon">🍽️</div>
+          <div>
+            <div class="case-industry">餐饮集团</div>
+            <div class="case-company">本地餐饮连锁集团（15间分店）</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-problem"><strong>痛点：</strong>食材浪费严重，每月浪费成本高达营业额的12%；客户投诉响应慢，差评率居高不下，新客户转化困难。</div>
+          <div class="case-solution"><strong>AI解决方案：</strong>AI需求预测系统优化食材采购，同时部署AI客服机器人处理WhatsApp订位、投诉、菜单询问。</div>
+          <div class="case-results">
+            <span class="result-badge">✓ 食材浪费降低 30%</span>
+            <span class="result-badge">✓ 客服响应速度 &lt;30秒</span>
+            <span class="result-badge">✓ 好评率提升 22%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div class="case-industry-icon">🏠</div>
+          <div>
+            <div class="case-industry">房地产</div>
+            <div class="case-company">中型房产代理公司</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-problem"><strong>痛点：</strong>每天通过WhatsApp和网站收到超过200个询盘，销售团队无法及时跟进，大量潜在客户因响应慢而流失。</div>
+          <div class="case-solution"><strong>AI解决方案：</strong>AI销售助理自动回复询盘、收集需求、筛选优质潜在客户，并自动排期安排看房，将热门线索推送给销售员。</div>
+          <div class="case-results">
+            <span class="result-badge">✓ 线索转化率 +25%</span>
+            <span class="result-badge">✓ 24小时自动响应</span>
+            <span class="result-badge">✓ 销售人效提升 3 倍</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div class="case-industry-icon">👔</div>
+          <div>
+            <div class="case-industry">人力资源 / 招聘</div>
+            <div class="case-company">企业内部HR部门（员工500+）</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-problem"><strong>痛点：</strong>每次招聘收到数百份简历，HR团队筛选耗时耗力，往往2-3周才能完成初筛，优质候选人已被竞争对手录用。</div>
+          <div class="case-solution"><strong>AI解决方案：</strong>AI简历筛选系统根据岗位要求自动评分、分类、标注，将最匹配的候选人直接推送给面试官，附带分析报告。</div>
+          <div class="case-results">
+            <span class="result-badge">✓ 招聘周期缩短 75%</span>
+            <span class="result-badge">✓ HR工作量减少 60%</span>
+            <span class="result-badge">✓ 录用质量提升</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div class="case-industry-icon">💼</div>
+          <div>
+            <div class="case-industry">专业服务 / 会计</div>
+            <div class="case-company">中小型会计师事务所</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-problem"><strong>痛点：</strong>报税季节工作量激增，员工加班严重，手动核对财务数据错误率高，客户报告延误造成合规风险和客户流失。</div>
+          <div class="case-solution"><strong>AI解决方案：</strong>AI财务处理助理自动提取和核对账目数据、标注异常项目、自动生成初稿报告，会计师只需审核和签字。</div>
+          <div class="case-results">
+            <span class="result-badge">✓ 处理效率提升 5 倍</span>
+            <span class="result-badge">✓ 加班时间减少 80%</span>
+            <span class="result-badge">✓ 客户满意度大幅提升</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REGISTRATION ════════════════════════════════════════════════════════ -->
+<section id="register">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">立即报名</div>
+      <h2 class="section-title">这是一个<span>改变您企业命运</span>的机会</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="reg-layout">
+      <div class="reg-perks reveal">
+        <div class="perk-item">
+          <div class="perk-icon">🎓</div>
+          <div>
+            <div class="perk-title">全天专业课程，完全免费</div>
+            <div class="perk-desc">价值 RM2,000 的AI转型实战课程，今天报名完全不需要任何费用。</div>
+          </div>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon">📖</div>
+          <div>
+            <div class="perk-title">获得专属 AI 工具手册</div>
+            <div class="perk-desc">精心整理的马来西亚中小企业适用 AI 工具清单，包含详细使用指南和成本对比。</div>
+          </div>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon">🔍</div>
+          <div>
+            <div class="perk-title">企业 AI 转型诊断报告</div>
+            <div class="perk-desc">根据您的行业和企业规模，获得个性化的 AI 转型优先级建议报告。</div>
+          </div>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon">🤝</div>
+          <div>
+            <div class="perk-title">顶级人脉网络</div>
+            <div class="perk-desc">与 200 位马来西亚中小企业老板和高管同场交流，建立真实商业连接。</div>
+          </div>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon">🎯</div>
+          <div>
+            <div class="perk-title">一对一 AI 战略咨询</div>
+            <div class="perk-desc">活动当天可预约与 AI 顾问进行 15 分钟一对一企业 AI 转型策略讨论。</div>
+          </div>
+        </div>
+        <div class="reg-urgency">
+          <div class="urgency-icon">🔥</div>
+          <div class="urgency-text">⚠️ 名额有限，只剩最后 200 席位！<br/>注册后将通过 WhatsApp 确认您的席位。</div>
+        </div>
+      </div>
+
+      <div class="reg-form-wrap reveal">
+        <!-- The actual form -->
+        <div id="form-container">
+          <div class="form-title">🚀 立即免费报名</div>
+          <div class="form-subtitle">填写以下信息，确保您的席位。报名成功后将通过 WhatsApp 与您确认。</div>
+          <form id="registration-form" novalidate>
+            <div class="form-group" id="fg-name">
+              <label for="name">姓名 <span class="req">*</span></label>
+              <input type="text" id="name" name="name" placeholder="请输入您的全名" />
+              <div class="form-error" id="err-name">请填写您的姓名</div>
+            </div>
+            <div class="form-group" id="fg-industry">
+              <label for="industry">行业 <span class="req">*</span></label>
+              <select id="industry" name="industry">
+                <option value="">— 请选择您所在的行业 —</option>
+                <option value="制造业">制造业</option>
+                <option value="零售与电商">零售与电商</option>
+                <option value="餐饮与食品">餐饮与食品</option>
+                <option value="房地产与建筑">房地产与建筑</option>
+                <option value="金融与会计">金融与会计</option>
+                <option value="教育与培训">教育与培训</option>
+                <option value="医疗与保健">医疗与保健</option>
+                <option value="物流与运输">物流与运输</option>
+                <option value="IT与科技">IT与科技</option>
+                <option value="专业服务（法律、顾问等）">专业服务（法律、顾问等）</option>
+                <option value="美容与健康">美容与健康</option>
+                <option value="农业与畜牧">农业与畜牧</option>
+                <option value="旅游与酒店">旅游与酒店</option>
+                <option value="其他">其他行业</option>
+              </select>
+              <div class="form-error" id="err-industry">请选择您所在的行业</div>
+            </div>
+            <div class="form-group" id="fg-whatsapp">
+              <label for="whatsapp">WhatsApp 号码 <span class="req">*</span></label>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="例：0123456789" />
+              <div class="form-error" id="err-whatsapp">请填写有效的 WhatsApp 号码（至少8位数字）</div>
+            </div>
+            <div class="form-group" id="fg-email">
+              <label for="email">电子邮件 <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" />
+              <div class="form-error" id="err-email">请填写有效的电子邮件地址</div>
+            </div>
+            <div class="form-group" id="fg-company">
+              <label for="company">公司名称（可选）</label>
+              <input type="text" id="company" name="company" placeholder="您的公司名称" />
+            </div>
+            <div class="form-group" id="fg-role">
+              <label for="role">职位（可选）</label>
+              <select id="role" name="role">
+                <option value="">— 请选择您的职位 —</option>
+                <option value="老板/创始人">老板 / 创始人</option>
+                <option value="CEO/总裁">CEO / 总裁</option>
+                <option value="总经理">总经理</option>
+                <option value="运营总监">运营总监</option>
+                <option value="财务总监">财务总监</option>
+                <option value="销售总监">销售总监</option>
+                <option value="部门主管">部门主管</option>
+                <option value="经理">经理</option>
+                <option value="其他">其他</option>
+              </select>
+            </div>
+            <button type="submit" class="form-submit" id="submit-btn">
+              🎉 确认免费报名
+            </button>
+            <div class="form-note">
+              提交即表示您同意接收活动相关信息。<br/>您的个人资料将被严格保密，不会被用于其他用途。
+            </div>
+          </form>
+        </div>
+        <!-- Success message (hidden by default) -->
+        <div class="form-success" id="form-success">
+          <div class="success-icon">🎉</div>
+          <h3>报名成功！席位已为您保留</h3>
+          <p>感谢您的报名！我们将在 24 小时内通过 WhatsApp 与您确认席位详情及活动地点。请留意我们的讯息。</p>
+          <br/>
+          <p style="color:var(--violet);font-weight:600;">📱 如有疑问，请通过 WhatsApp 联系我们</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ══════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">AI TRANSFORM MY</div>
+  <div class="footer-tagline">马来西亚中小企业 AI 转型峰会 · 2026</div>
+  <hr class="footer-divider" />
+  <div class="footer-copy">
+    © 2026 AI Transform Malaysia · 本活动为公益性教育活动，完全免费<br/>
+    <a href="mailto:info@aitransform.my">info@aitransform.my</a>
+  </div>
+</footer>
+
+
+<!-- ═══ SCRIPTS ════════════════════════════════════════════════════════════ -->
+<script>
+/* ── Particle Canvas ─────────────────────────────────────────────────────── */
+(function() {
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let animId;
+
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x  = Math.random() * canvas.width;
+      this.y  = Math.random() * canvas.height;
+      this.r  = Math.random() * 1.8 + 0.4;
+      this.vx = (Math.random() - 0.5) * 0.35;
+      this.vy = (Math.random() - 0.5) * 0.35;
+      this.alpha = Math.random() * 0.5 + 0.1;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(162,155,254,${this.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < 90; i++) particles.push(new Particle());
+
+  function drawLines() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const d  = Math.sqrt(dx*dx + dy*dy);
+        if (d < 120) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(108,92,231,${0.15 * (1 - d/120)})`;
+          ctx.lineWidth = 0.6;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    drawLines();
+    animId = requestAnimationFrame(animate);
+  }
+  animate();
+
+  /* Stop animation when hero is scrolled out of view */
+  const hero = document.getElementById('hero');
+  const io = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) cancelAnimationFrame(animId);
+    else animate();
+  });
+  io.observe(hero);
+})();
+
+/* ── Countdown Timer ─────────────────────────────────────────────────────── */
+(function() {
+  const target = new Date('2026-07-19T09:00:00+08:00');
+  function update() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      ['days','hours','mins','secs'].forEach(id => {
+        document.getElementById('cd-' + id).textContent = '00';
+      });
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+  }
+  update();
+  setInterval(update, 1000);
+})();
+
+/* ── Scroll Reveal ───────────────────────────────────────────────────────── */
+(function() {
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => io.observe(el));
+})();
+
+/* ── Counter Animation ───────────────────────────────────────────────────── */
+(function() {
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el  = e.target;
+        const end = +el.dataset.target;
+        let   cur = 0;
+        const dur = 1800;
+        const step = end / (dur / 16);
+        const timer = setInterval(() => {
+          cur = Math.min(cur + step, end);
+          el.textContent = Math.round(cur);
+          if (cur >= end) clearInterval(timer);
+        }, 16);
+        io.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+  counters.forEach(el => io.observe(el));
+})();
+
+/* ── Data Bar Animation ──────────────────────────────────────────────────── */
+(function() {
+  const fills = document.querySelectorAll('.data-bar-fill[data-width]');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.width + '%';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  fills.forEach(el => io.observe(el));
+})();
+
+/* ── Form Validation & Submission ────────────────────────────────────────── */
+(function() {
+  /* ====================================================================
+     GOOGLE SHEETS INTEGRATION SETUP:
+
+     1. Go to sheets.google.com and create a new spreadsheet.
+     2. Name the columns in Row 1 exactly:
+        Timestamp | 姓名 | 行业 | WhatsApp | 电子邮件 | 公司 | 职位
+     3. Go to Extensions → Apps Script and paste the code from apps-script.gs
+     4. Deploy as Web App (Execute as: Me, Access: Anyone)
+     5. Copy the Web App URL and replace the placeholder below.
+  ==================================================================== */
+  const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+  const form    = document.getElementById('registration-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const successEl = document.getElementById('form-success');
+  const formContainer = document.getElementById('form-container');
+
+  function setError(groupId, errId, show) {
+    const grp = document.getElementById(groupId);
+    const err = document.getElementById(errId);
+    if (show) { grp.classList.add('error'); err && (err.style.display = 'block'); }
+    else       { grp.classList.remove('error'); err && (err.style.display = 'none'); }
+  }
+
+  function validate() {
+    let ok = true;
+    const name      = document.getElementById('name').value.trim();
+    const industry  = document.getElementById('industry').value;
+    const whatsapp  = document.getElementById('whatsapp').value.trim().replace(/\D/g,'');
+    const email     = document.getElementById('email').value.trim();
+
+    if (!name)                          { setError('fg-name',      'err-name',      true);  ok = false; } else setError('fg-name',      'err-name',      false);
+    if (!industry)                      { setError('fg-industry',   'err-industry',  true);  ok = false; } else setError('fg-industry',   'err-industry',  false);
+    if (whatsapp.length < 8)            { setError('fg-whatsapp',   'err-whatsapp',  true);  ok = false; } else setError('fg-whatsapp',   'err-whatsapp',  false);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('fg-email', 'err-email', true); ok = false; } else setError('fg-email', 'err-email', false);
+
+    return ok;
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    if (!validate()) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '提交中……';
+
+    const payload = {
+      name:     document.getElementById('name').value.trim(),
+      industry: document.getElementById('industry').value,
+      whatsapp: document.getElementById('whatsapp').value.trim(),
+      email:    document.getElementById('email').value.trim(),
+      company:  document.getElementById('company').value.trim(),
+      role:     document.getElementById('role').value,
+      timestamp: new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Kuala_Lumpur' })
+    };
+
+    if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
+      /* Dev mode: skip real submission, show success */
+      setTimeout(showSuccess, 800);
+      return;
+    }
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      showSuccess();
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '🎉 确认免费报名';
+      alert('提交时出现问题，请稍后再试。');
+    }
+  });
+
+  function showSuccess() {
+    formContainer.style.display = 'none';
+    successEl.style.display = 'block';
+    successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+})();
+</script>
+</body>
+</html>
